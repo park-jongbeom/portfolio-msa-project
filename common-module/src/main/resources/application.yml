@@ -1,0 +1,7 @@
+spring:
+  application:
+    name: common-module
+  r2dbc: # jdbc 대신 r2dbc 사용
+    url: r2dbc:postgresql://ls-584229d62cccd625a5fa723267dbdbc614b3b0e5.c9wi0gwweu9n.ap-northeast-2.rds.amazonaws.com:5432/pofol
+    username: dbmasteruser
+    password: w,*i.uAk7f^Gj;Gk`3O`oqZx3`0fj9Vm

@@ -5,3 +5,4 @@ rootProject.name = "portfolio-msa-project"
 include("api-gateway-service")
 include("ingestion-service")
 include("search-service")
+include("common-module")
