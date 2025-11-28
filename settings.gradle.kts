@@ -1,3 +1,10 @@
+pluginManagement {
+    repositories {
+        mavenCentral()
+        gradlePluginPortal()
+    }
+}
+
 // settings.gradle.kts
 rootProject.name = "portfolio-msa-project"
 

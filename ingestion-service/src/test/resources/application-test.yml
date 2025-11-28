@@ -1,0 +1,28 @@
+spring:
+  application:
+    name: ingestion-service-test
+
+  datasource:
+    # H2 인메모리 DB 사용
+    url: jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE;MODE=PostgreSQL
+    username: sa
+    password:
+    driver-class-name: org.h2.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: create-drop # 테스트 시작 시 생성, 종료 시 삭제
+    properties:
+      hibernate:
+        format_sql: true
+    defer-datasource-initialization: true # Batch 스키마 초기화 순서 보장
+
+  batch:
+    jdbc:
+      initialize-schema: always # H2에 배치 메타 테이블 자동 생성
+
+# 커스텀 설정 (테스트용 임시 경로)
+app:
+  drug-data:
+    file-path: "build/test-download/"
+    source-url: "https://nedrug.mfds.go.kr"

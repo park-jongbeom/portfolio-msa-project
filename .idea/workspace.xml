@@ -4,33 +4,45 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5e6bdd9f-c76c-417b-b9bd-d6e15a733b21" name="Changes" comment="init readme write">
-      <change beforePath="$PROJECT_DIR$/.gradle/8.8/checksums/checksums.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.8/checksums/md5-checksums.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.8/checksums/sha1-checksums.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.8/dependencies-accessors/gc.properties" beforeDir="false" afterPath="$PROJECT_DIR$/common-module/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.8/executionHistory/executionHistory.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.8/executionHistory/executionHistory.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.8/fileChanges/last-build.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.8/fileHashes/fileHashes.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.8/fileHashes/fileHashes.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.8/gc.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/cache.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/vcs-1/gc.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/kotlinc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+    <list default="true" id="5e6bdd9f-c76c-417b-b9bd-d6e15a733b21" name="Changes" comment="init gitignore">
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules/ingestion-service/portfolio-msa-project.ingestion-service.test.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common-module/src/main/kotlin/com/qk54r71/commonmodule/domain/entity/BatchJobHistory.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common-module/src/main/kotlin/com/qk54r71/commonmodule/domain/entity/DrugMaster.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common-module/src/main/kotlin/com/qk54r71/commonmodule/domain/entity/DrugSpec.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ingestion-service/src/main/kotlin/com/qk54r71/ingestionservice/client/NedrugClient.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ingestion-service/src/main/kotlin/com/qk54r71/ingestionservice/config/BatchJobConfig.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ingestion-service/src/main/kotlin/com/qk54r71/ingestionservice/dto/DrugPermitExcelDto.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ingestion-service/src/main/kotlin/com/qk54r71/ingestionservice/listener/DrugPermitExcelListener.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ingestion-service/src/main/kotlin/com/qk54r71/ingestionservice/listener/JobLoggingListener.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ingestion-service/src/main/kotlin/com/qk54r71/ingestionservice/repository/BatchJobHistoryRepository.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ingestion-service/src/main/kotlin/com/qk54r71/ingestionservice/repository/DrugMasterRepository.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ingestion-service/src/main/kotlin/com/qk54r71/ingestionservice/repository/DrugSpecRepository.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ingestion-service/src/main/kotlin/com/qk54r71/ingestionservice/scheduler/BatchScheduler.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ingestion-service/src/main/kotlin/com/qk54r71/ingestionservice/tasklet/NedrugDownloadTasklet.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ingestion-service/src/test/kotlin/com/qk54r71/ingestionservice/DrugInfoUpdateJobTest.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ingestion-service/src/test/resources/OpenData_ItemPermitDetail20251126.xls" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ingestion-service/src/test/resources/application-test.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.8/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.8/checksums/checksums.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.8/checksums/md5-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.8/checksums/md5-checksums.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.8/checksums/sha1-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.8/checksums/sha1-checksums.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.8/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.8/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.8/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.8/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.8/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.8/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/d85af986-7789-4c4f-8408-a536fa1049d1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/d85af986-7789-4c4f-8408-a536fa1049d1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/d85af986-7789-4c4f-8408-a536fa1049d1/storage_v2/_src_/database/pofol.ZEpeBg/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/d85af986-7789-4c4f-8408-a536fa1049d1/storage_v2/_src_/database/pofol.ZEpeBg/schema/public.abK9xQ.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api-gateway-service/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway-service/build.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-gateway-service/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/common-module/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/common-module/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common-module/src/main/resources/application.properties" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/ingestion-service/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/ingestion-service/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ingestion-service/src/main/kotlin/com/qk54r71/ingestionservice/IngestionServiceApplication.kt" beforeDir="false" afterPath="$PROJECT_DIR$/ingestion-service/src/main/kotlin/com/qk54r71/ingestionservice/IngestionServiceApplication.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ingestion-service/src/main/resources/application.properties" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/search-service/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/search-service/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/search-service/src/main/resources/application.properties" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/settings.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/settings.gradle.kts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -61,19 +73,32 @@
   <component name="ExternalProjectsManager">
     <system id="GRADLE">
       <state>
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
+        <task path="$PROJECT_DIR$/ingestion-service">
+          <activation />
+        </task>
+        <task path="~\IdeaProjects\portfolio-msa-project\ingestion-service">
+          <activation />
+        </task>
         <projects_view>
           <tree_state>
-            <expand>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="portfolio-msa-project" type="f1a62948:ProjectNode" />
-              </path>
-            </expand>
+            <expand />
             <select />
           </tree_state>
         </projects_view>
       </state>
     </system>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Kotlin Data Class" />
+        <option value="Kotlin Interface" />
+        <option value="Kotlin Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -81,6 +106,7 @@
   <component name="GithubDefaultAccount">
     <option name="defaultAccountId" value="a9ca2fba-486f-431e-a19b-692e7e5c9f9a" />
   </component>
+  <component name="PhpDebugGeneral" listening_started="true" />
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 1
 }</component>
@@ -90,35 +116,55 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;corretto-17&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/qk54r/IdeaProjects/portfolio-msa-project/settings.gradle.kts&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.291954&quot;,
-    &quot;run.configurations.included.in.services&quot;: &quot;true&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.project.gradle&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Gradle.Build portfolio-msa-project.executor": "Run",
+    "Gradle.DrugInfoUpdateJobTest.실제_사이트에서_오늘자_엑셀을_다운받아_DB에_적재한다 (1).executor": "Run",
+    "Gradle.DrugInfoUpdateJobTest.실제_사이트에서_오늘자_엑셀을_다운받아_DB에_적재한다.executor": "Run",
+    "Gradle.portfolio-msa-project [build].executor": "Run",
+    "Gradle.portfolio-msa-project [clean].executor": "Run",
+    "Gradle.portfolio-msa-project:ingestion-service [clean].executor": "Run",
+    "JUnit.Whole project (1).executor": "Run",
+    "JUnit.Whole project (2).executor": "Run",
+    "JUnit.Whole project.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "master",
+    "ignore.virus.scanning.warn.message": "true",
+    "jdk.selected.JAVA_MODULE": "corretto-17",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/qk54r/IdeaProjects/portfolio-msa-project/ingestion-service/src/test/resources",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.291954",
+    "run.configurations.included.in.services": "true",
+    "settings.editor.selected.configurable": "reference.settingsdialog.project.gradle",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;postgresql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "postgresql"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\qk54r\IdeaProjects\portfolio-msa-project\ingestion-service\src\test\resources" />
+      <recent name="C:\Users\qk54r\IdeaProjects\portfolio-msa-project\search-service\src\main\resources" />
+      <recent name="C:\Users\qk54r\IdeaProjects\portfolio-msa-project\ingestion-service\src\main\resources" />
+      <recent name="C:\Users\qk54r\IdeaProjects\portfolio-msa-project\api-gateway-service\src\main\resources" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\qk54r\IdeaProjects\portfolio-msa-project" />
+    </key>
+    <key name="CopyKotlinDeclarationDialog.RECENTS_KEY">
+      <recent name="com.qk54r71.ingestionservice.repository" />
+      <recent name="com.qk54r71.commonmodule.domain.entity" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -131,7 +177,97 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.ApiGatewayServiceApplication">
+  <component name="RunManager" selected="Gradle.DrugInfoUpdateJobTest.실제_사이트에서_오늘자_엑셀을_다운받아_DB에_적재한다">
+    <configuration name="DrugInfoUpdateJobTest.실제_사이트에서_오늘자_엑셀을_다운받아_DB에_적재한다" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":ingestion-service:test" />
+            <option value="--tests" />
+            <option value="&quot;com.qk54r71.ingestionservice.DrugInfoUpdateJobTest.실제_사이트에서_오늘자_엑셀을_다운받아_DB에_적재한다&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="portfolio-msa-project [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="build" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>false</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="portfolio-msa-project [clean]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="clean" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>false</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="portfolio-msa-project:ingestion-service [clean]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/ingestion-service" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="clean" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>false</RunAsTest>
+      <method v="2" />
+    </configuration>
     <configuration name="ApiGatewayServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="portfolio-msa-project.api-gateway-service.main" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.qk54r71.apigatewayservice.ApiGatewayServiceApplication" />
@@ -160,6 +296,24 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Gradle.DrugInfoUpdateJobTest.실제_사이트에서_오늘자_엑셀을_다운받아_DB에_적재한다" />
+      <item itemvalue="Gradle.portfolio-msa-project [build]" />
+      <item itemvalue="Gradle.portfolio-msa-project [clean]" />
+      <item itemvalue="Gradle.portfolio-msa-project:ingestion-service [clean]" />
+      <item itemvalue="Spring Boot.ApiGatewayServiceApplication" />
+      <item itemvalue="Spring Boot.CommonModuleApplication" />
+      <item itemvalue="Spring Boot.IngestionServiceApplication" />
+      <item itemvalue="Spring Boot.SearchServiceApplication" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Gradle.DrugInfoUpdateJobTest.실제_사이트에서_오늘자_엑셀을_다운받아_DB에_적재한다" />
+        <item itemvalue="Gradle.DrugInfoUpdateJobTest.실제_사이트에서_오늘자_엑셀을_다운받아_DB에_적재한다" />
+        <item itemvalue="Gradle.portfolio-msa-project [build]" />
+        <item itemvalue="Gradle.portfolio-msa-project [clean]" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -184,7 +338,14 @@
       <workItem from="1764134583388" duration="612000" />
       <workItem from="1764135222770" duration="343000" />
       <workItem from="1764135604205" duration="1256000" />
-      <workItem from="1764136881253" duration="1464000" />
+      <workItem from="1764136881253" duration="6653000" />
+      <workItem from="1764143719422" duration="1092000" />
+      <workItem from="1764144834340" duration="982000" />
+      <workItem from="1764145839634" duration="1231000" />
+      <workItem from="1764147095695" duration="1368000" />
+      <workItem from="1764148478911" duration="771000" />
+      <workItem from="1764149269392" duration="2878000" />
+      <workItem from="1764301364206" duration="6987000" />
     </task>
     <task id="LOCAL-00001" summary="init gradle">
       <option name="closed" value="true" />
@@ -202,7 +363,15 @@
       <option name="project" value="LOCAL" />
       <updated>1763618504904</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="init gitignore">
+      <option name="closed" value="true" />
+      <created>1764138636539</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1764138636539</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -222,6 +391,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="init gradle" />
     <MESSAGE value="init readme write" />
-    <option name="LAST_COMMIT_MESSAGE" value="init readme write" />
+    <MESSAGE value="init gitignore" />
+    <option name="LAST_COMMIT_MESSAGE" value="init gitignore" />
   </component>
 </project>
