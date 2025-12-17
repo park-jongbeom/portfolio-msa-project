@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-mappings xmlns="https://jakarta.ee/xml/ns/persistence/orm"
+                 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                 xsi:schemaLocation="https://jakarta.ee/xml/ns/persistence/orm
+                                     https://jakarta.ee/xml/ns/persistence/orm/orm_3_1.xsd"
+                 version="3.1">
+
+    <entity class="com.qk54r71.commonmodule.domain.entity.DrugMaster" access="FIELD">
+        <table name="drug_master"/>
+
+        <attributes>
+            <id name="masterId">
+                <column name="master_id"/>
+                <generated-value strategy="IDENTITY"/>
+            </id>
+
+            <basic name="itemSeq">
+                <column name="item_seq" unique="true" nullable="false" length="20"/>
+            </basic>
+
+            <basic name="productNameKo">
+                <column name="product_name_ko" nullable="false" length="512"/>
+            </basic>
+
+            <basic name="productNameEn">
+                <column name="product_name_en" length="512"/>
+            </basic>
+
+            <basic name="companyName">
+                <column name="company_name" nullable="false" length="100"/>
+            </basic>
+
+            <basic name="companyNameEn">
+                <column name="company_name_en" length="100"/>
+            </basic>
+
+            <basic name="itemType">
+                <column name="item_type" length="50"/>
+            </basic>
+
+            <basic name="permitDate">
+                <column name="permit_date" length="10"/>
+            </basic>
+
+            <basic name="cancelDate">
+                <column name="cancel_date" length="10"/>
+            </basic>
+
+            <basic name="cancelStatus">
+                <column name="cancel_status" length="20"/>
+            </basic>
+
+            <basic name="delBl">
+                <column name="del_bl" nullable="false"/>
+            </basic>
+
+            <basic name="createdAt">
+                <column name="created_at" updatable="false"/>
+            </basic>
+
+            <basic name="updatedAt">
+                <column name="updated_at"/>
+            </basic>
+        </attributes>
+    </entity>
+
+    <entity class="com.qk54r71.commonmodule.domain.entity.DrugSpec" access="FIELD">
+        <table name="drug_spec"/>
+
+        <attributes>
+            <id name="specId">
+                <column name="spec_id"/>
+                <generated-value strategy="IDENTITY"/>
+            </id>
+
+            <basic name="masterId">
+                <column name="master_id" nullable="false"/>
+            </basic>
+
+            <basic name="standardCode">
+                <column name="standard_code" column-definition="text"/>
+            </basic>
+
+            <basic name="insuranceCode">
+                <column name="insurance_code" column-definition="text"/>
+            </basic>
+
+            <basic name="atcCode">
+                <column name="atc_code" column-definition="text"/>
+            </basic>
+
+            <basic name="mainIngredient">
+                <column name="main_ingredient" column-definition="text"/>
+            </basic>
+
+            <basic name="additives">
+                <column name="additives" column-definition="text"/>
+            </basic>
+
+            <basic name="appearance">
+                <column name="appearance" column-definition="text"/>
+            </basic>
+
+            <basic name="efficacyUrl">
+                <column name="efficacy_url" column-definition="text"/>
+            </basic>
+
+            <basic name="dosageUrl">
+                <column name="dosage_url" column-definition="text"/>
+            </basic>
+
+            <basic name="precautionsUrl">
+                <column name="precautions_url" column-definition="text"/>
+            </basic>
+
+            <basic name="storageMethod">
+                <column name="storage_method" length="255"/>
+            </basic>
+
+            <basic name="validPeriod">
+                <column name="valid_period" column-definition="text"/>
+            </basic>
+
+            <basic name="packingUnit">
+                <column name="packing_unit" length="255"/>
+            </basic>
+
+            <basic name="businessType">
+                <column name="business_type" length="50"/>
+            </basic>
+
+            <basic name="newDrugYn">
+                <column name="new_drug_yn" length="20"/>
+            </basic>
+
+            <basic name="etcData">
+                <column name="etc_data" column-definition="text"/>
+            </basic>
+
+            <basic name="delBl">
+                <column name="del_bl" nullable="false"/>
+            </basic>
+
+            <basic name="createdAt">
+                <column name="created_at" updatable="false"/>
+            </basic>
+
+            <basic name="updatedAt">
+                <column name="updated_at"/>
+            </basic>
+        </attributes>
+    </entity>
+
+    <entity class="com.qk54r71.commonmodule.domain.entity.BatchJobHistory" access="FIELD">
+        <table name="batch_job_history"/>
+        <attributes>
+            <id name="historyId">
+                <column name="history_id"/>
+                <generated-value strategy="IDENTITY"/>
+            </id>
+            <basic name="jobName">
+                <column name="job_name" nullable="false" length="100"/>
+            </basic>
+            <basic name="status">
+                <column name="status" nullable="false" length="20"/>
+            </basic>
+            <basic name="startTime">
+                <column name="start_time" nullable="false"/>
+            </basic>
+            <basic name="endTime">
+                <column name="end_time"/>
+            </basic>
+            <basic name="durationMs">
+                <column name="duration_ms"/>
+            </basic>
+            <basic name="processedCount">
+                <column name="processed_count"/>
+            </basic>
+            <basic name="failReason">
+                <column name="fail_reason" column-definition="text"/>
+            </basic>
+            <basic name="delBl">
+                <column name="del_bl" nullable="false"/>
+            </basic>
+            <basic name="createdAt">
+                <column name="created_at" updatable="false"/>
+            </basic>
+        </attributes>
+    </entity>
+
+</entity-mappings>

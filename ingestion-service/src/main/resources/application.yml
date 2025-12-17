@@ -1,0 +1,32 @@
+spring:
+  application:
+    name: ingestion-service
+
+  # 공통 JPA/Hibernate 튜닝
+  jpa:
+    open-in-view: false
+    mapping-resources: META-INF/orm.xml
+    hibernate:
+      ddl-auto: validate
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: true
+        jdbc:
+          batch_size: 100
+        order_inserts: true
+        order_updates: true
+
+  # 파일 업로드 크기 (공통)
+  servlet:
+    multipart:
+      max-file-size: 50MB
+      max-request-size: 50MB
+
+  cloud:
+    openfeign:
+      client:
+        config:
+          default:
+            connectTimeout: 5000
+            readTimeout: 600000

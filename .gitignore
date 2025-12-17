@@ -183,7 +183,7 @@ gradle-app.setting
 *.hprof
 
 # End of https://www.toptal.com/developers/gitignore/api/kotlin,intellij,git,gradle
-/api-gateway-service/src/main/resources/
-/common-module/src/main/resources/
-/ingestion-service/src/main/resources/
-/search-service/src/main/resources/
+/api-gateway-service/src/main/resources/application-local.yml
+/common-module/src/main/resources/application-local.yml
+/ingestion-service/src/main/resources/application-local.yml
+/search-service/src/main/resources/application-local.yml
