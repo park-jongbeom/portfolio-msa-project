@@ -1,28 +1,51 @@
 spring:
   application:
     name: ingestion-service-test
-
   datasource:
-    # H2 인메모리 DB 사용
-    url: jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE;MODE=PostgreSQL
-    username: sa
-    password:
-    driver-class-name: org.h2.Driver
-
+    url: jdbc:postgresql://ls-584229d62cccd625a5fa723267dbdbc614b3b0e5.c9wi0gwweu9n.ap-northeast-2.rds.amazonaws.com:5432/pofol_test
+    username: dbmasteruser
+    password: w,*i.uAk7f^Gj;Gk`3O`oqZx3`0fj9Vm
+    driver-class-name: org.postgresql.Driver
+  # 2. JPA 설정
   jpa:
+    # XML 매핑 파일 위치 지정 (기본값이 META-INF/orm.xml 이지만 명시 권장)
+    mapping-resources: META-INF/orm.xml
+    # Hibernate 설정
     hibernate:
-      ddl-auto: create-drop # 테스트 시작 시 생성, 종료 시 삭제
+      ddl-auto: validate # 운영 중엔 validate 또는 none 사용
     properties:
       hibernate:
-        format_sql: true
-    defer-datasource-initialization: true # Batch 스키마 초기화 순서 보장
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: true # 로그에 SQL 예쁘게 출력
+  cloud:
+    openfeign:
+      client:
+        config:
+          default:
+            connectTimeout: 30000
+            readTimeout: 30000 # 5분
 
   batch:
+    job:
+      enabled: false  # [핵심] 애플리케이션 시작 시 Job 자동 실행 끄기
     jdbc:
-      initialize-schema: always # H2에 배치 메타 테이블 자동 생성
+      initialize-schema: never
 
 # 커스텀 설정 (테스트용 임시 경로)
 app:
   drug-data:
     file-path: "build/test-download/"
     source-url: "https://nedrug.mfds.go.kr"
+
+logging:
+  level:
+    # 전체 로그는 INFO로 하되, 중요 패키지만 DEBUG
+    root: INFO
+    # 우리가 만든 코드 로그
+    com.qk54r71: DEBUG
+    # Feign Client 통신 로그 (헤더, 응답 코드 확인용)
+    com.qk54r71.ingestionservice.client: DEBUG
+    # Spring Batch 실행 흐름 확인
+    org.springframework.batch: DEBUG
+    # SQL 실행 확인 (DB 락 걸렸는지 확인용)
+    org.hibernate.SQL: DEBUG

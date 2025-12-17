@@ -15,23 +15,20 @@ data class DrugMaster(
     // 3. 기본 정보
     var productNameKo: String,
 
-    var productNameEn: String? = null,
+    var productNameEn: String? = "",
 
     var companyName: String,
 
-    var companyNameEn: String? = null,
+    var companyNameEn: String? = "",
 
-    var itemType: String? = null, // 전문/일반
+    var itemType: String? = "", // 전문/일반
 
     // 4. 상태 및 날짜 정보
-    var permitDate: String? = null, // 허가일자
+    var permitDate: String? = "", // 허가일자
 
-    var cancelDate: String? = null, // 취소일자
+    var cancelDate: String? = "", // 취소일자
 
-    var cancelStatus: String? = null, // 취소상태
-
-    // 5. 검색 최적화 (TSVECTOR - String 처리)
-    val searchVector: String? = null,
+    var cancelStatus: String? = "", // 취소상태
 
     // 6. 관리 필드
     var delBl: Boolean = false,

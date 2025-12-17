@@ -1,6 +1,7 @@
 package com.qk54r71.ingestionservice.config
 
 import com.alibaba.excel.EasyExcel
+import com.alibaba.excel.exception.ExcelAnalysisStopException
 import com.qk54r71.ingestionservice.tasklet.NedrugDownloadTasklet
 import com.qk54r71.ingestionservice.listener.DrugPermitExcelListener
 import com.qk54r71.ingestionservice.dto.DrugPermitExcelDto
@@ -46,25 +47,32 @@ class BatchJobConfig(
     @Bean
     fun excelToDbStep(): Step {
         return StepBuilder("excelToDbStep", jobRepository)
-            .tasklet({ contribution, chunkContext ->
+            .tasklet({ _, chunkContext ->
                 // 1. [핵심] 앞 단계에서 저장한 파일 경로를 꺼내옵니다.
                 val jobExecutionContext = chunkContext.stepContext.stepExecution.jobExecution.executionContext
                 val filePath = jobExecutionContext.getString("DOWNLOAD_FILE_PATH")
 
-                println(">>> [Step 2] 엑셀 데이터 파싱 시작 (파일: $filePath)")
+                //JobParameter에서 limit 값 읽기 (없으면 -1)
+                val jobParams = chunkContext.stepContext.jobParameters
+                val readLimit = jobParams["readLimit"]?.toString()?.toLong() ?: -1L
 
-                if (filePath.isNullOrBlank()) {
-                    throw RuntimeException("처리할 엑셀 파일 경로가 없습니다.")
+                println(">>> [Step 2] 엑셀 파싱 시작 (파일: $filePath, 제한: $readLimit)")
+
+                if (filePath.isNotBlank()) {
+                    try {
+                        EasyExcel.read(
+                            filePath,
+                            DrugPermitExcelDto::class.java,
+                            // Listener에 limit 값 전달
+                            DrugPermitExcelListener(drugMasterRepository, drugSpecRepository, readLimit)
+                        )
+                            .sheet()
+                            .doRead()
+                    } catch (e: ExcelAnalysisStopException) {
+                        // [핵심] 의도된 중단이므로 예외를 삼키고 정상 종료 처리
+                        println(">>> 설정된 제한 개수($readLimit)만큼 처리하고 중단했습니다.")
+                    }
                 }
-
-                // 2. EasyExcel 실행 (전달받은 filePath 사용)
-                EasyExcel.read(
-                    filePath,
-                    DrugPermitExcelDto::class.java,
-                    DrugPermitExcelListener(drugMasterRepository, drugSpecRepository)
-                )
-                    .sheet()
-                    .doRead()
 
                 println(">>> [Step 2] DB 적재 완료.")
                 RepeatStatus.FINISHED

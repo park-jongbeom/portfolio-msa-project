@@ -36,6 +36,17 @@ dependencies {
 
     // [테스트용] Spring Batch Test 도구
     add("testImplementation", "org.springframework.batch:spring-batch-test")
-    // [테스트용] H2 Database (테스트할 때 실제 DB 대신 사용)
-    add("testImplementation", "com.h2database:h2")
+}
+
+tasks.withType<Test> {
+    useJUnitPlatform()
+
+    // [핵심] 테스트 실행 중 표준 출력(System.out)과 에러(System.err)를 콘솔에 표시
+    testLogging {
+        events("passed", "skipped", "failed", "standardOut", "standardError")
+        showStandardStreams = true
+        showExceptions = true
+        showCauses = true
+        showStackTraces = true
+    }
 }

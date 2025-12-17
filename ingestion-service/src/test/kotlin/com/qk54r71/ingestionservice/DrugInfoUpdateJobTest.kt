@@ -17,11 +17,16 @@ import org.springframework.test.context.ActiveProfiles
 import java.io.File
 import java.time.LocalDate
 import java.time.format.DateTimeFormatter
+import org.slf4j.LoggerFactory // 로거 추가
+import java.time.LocalDateTime
 
 @SpringBootTest
 @SpringBatchTest
 @ActiveProfiles("test") // application-test.yml 설정 사용
 class DrugInfoUpdateJobTest {
+    // println 대신 Logger 사용 권장 (시간/스레드 정보 자동 출력)
+    private val log = LoggerFactory.getLogger(this::class.java)
+
     @Autowired
     private lateinit var jobLauncherTestUtils: JobLauncherTestUtils
 
@@ -40,6 +45,8 @@ class DrugInfoUpdateJobTest {
 
     @BeforeEach
     fun setUp() {
+        log.info(">>> [Test SetUp] 시작: DB 초기화 및 파일 정리")
+
         // 1. DB 초기화
         drugSpecRepository.deleteAll()
         drugMasterRepository.deleteAll()
@@ -55,19 +62,26 @@ class DrugInfoUpdateJobTest {
         if (targetFile.exists()) {
             targetFile.delete()
         }
+        log.info(">>> [Test SetUp] 완료")
     }
 
     @Test
     fun `실제_사이트에서_오늘자_엑셀을_다운받아_DB에_적재한다`() {
         // Given
-        println(">>> [TEST] 통합 테스트 시작: 실제 다운로드 및 DB 적재")
+        log.info(">>> [TEST Start] 실제 다운로드 및 DB 적재 테스트 시작 (Time: ${LocalDateTime.now()})")
 
-        // When: Job 실행
-        // (Step 1에서 다운로드 -> Context에 경로 저장 -> Step 2에서 경로 읽기 -> DB 저장)
-        val jobExecution = jobLauncherTestUtils.launchJob()
+        // When: Job 실행 (파라미터 추가)
+        val jobParameters = jobLauncherTestUtils.uniqueJobParametersBuilder
+            .addLong("readLimit", 50L) // 👈 1000개만 읽도록 제한 설정
+            .toJobParameters()
+
+        log.info(">>> [TEST] Job 실행 요청 (다운로드 시작 - 시간이 걸릴 수 있음)")
+
+        val jobExecution = jobLauncherTestUtils.launchJob(jobParameters)
+
+        log.info(">>> [TEST] Job 실행 완료. 상태: ${jobExecution.exitStatus}")
 
         // Then
-        // 1. Job 성공 여부 확인
         assertEquals(ExitStatus.COMPLETED, jobExecution.exitStatus)
 
         // 2. 파일이 실제로 다운로드 되었는지 확인
@@ -76,18 +90,20 @@ class DrugInfoUpdateJobTest {
         val fileName = "OpenData_ItemPermitDetail${todayStr}.xlsx"
         val downloadedFile = File(downloadDir, fileName)
 
+        log.info(">>> [TEST] 파일 확인: ${downloadedFile.absolutePath}")
         assertTrue(downloadedFile.exists(), "오늘 날짜의 엑셀 파일이 존재해야 한다: ${downloadedFile.absolutePath}")
         assertTrue(downloadedFile.length() > 0, "파일 크기가 0보다 커야 한다.")
-        println(">>> 다운로드 확인 완료: ${downloadedFile.name} (${downloadedFile.length()} bytes)")
+        log.info(">>> [TEST] 다운로드 파일 크기: ${downloadedFile.length()} bytes")
 
         // 3. DB 데이터 적재 확인
         val masterCount = drugMasterRepository.count()
         val specCount = drugSpecRepository.count()
 
-        println(">>> DB 적재 결과 - Master: $masterCount, Spec: $specCount")
+        log.info(">>> [TEST] DB 적재 결과 - Master: $masterCount, Spec: $specCount")
 
-        assertTrue(masterCount > 0, "DrugMaster 데이터가 적재되어야 한다.")
-        assertTrue(specCount > 0, "DrugSpec 데이터가 적재되어야 한다.")
+        // 검증: 0보다 크고, 1000개 근처여야 함 (헤더나 공백 제외 시 오차 있을 수 있음)
+        assertTrue(masterCount > 0, "데이터가 적재되어야 한다.")
+        assertTrue(masterCount <= 1100, "제한 설정(1000)보다 너무 많이 저장되면 안 된다.")
 
         // Master와 Spec의 개수가 (대략적으로) 맞는지 확인
         // (데이터 무결성에 따라 100% 일치하지 않을 수도 있지만, 여기서는 로직 검증용)

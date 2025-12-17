@@ -1,6 +1,7 @@
 package com.qk54r71.ingestionservice.listener
 
 import com.alibaba.excel.context.AnalysisContext
+import com.alibaba.excel.exception.ExcelAnalysisStopException
 import com.alibaba.excel.read.listener.ReadListener
 import com.qk54r71.commonmodule.domain.entity.DrugMaster
 import com.qk54r71.commonmodule.domain.entity.DrugSpec
@@ -15,12 +16,14 @@ import org.slf4j.LoggerFactory
  */
 class DrugPermitExcelListener(
     private val drugMasterRepository: DrugMasterRepository,
-    private val drugSpecRepository: DrugSpecRepository
+    private val drugSpecRepository: DrugSpecRepository,
+    private val limitCount: Long = -1 // 👈 제한 개수 추가 (기본값 -1: 무제한)
 ) : ReadListener<DrugPermitExcelDto> {
 
     private val log = LoggerFactory.getLogger(this::class.java)
     private val BATCH_COUNT = 100 // 한 번에 처리할 데이터 수 (메모리 관리용)
     private val cachedList = ArrayList<DrugPermitExcelDto>()
+    private var totalCount: Long = 0 // 👈 처리 건수 카운터
 
     /**
      * 엑셀의 한 행(Row)을 읽을 때마다 호출됨
@@ -29,12 +32,21 @@ class DrugPermitExcelListener(
         // 품목일련번호(Key)가 없는 데이터는 스킵
         if (!data.itemSeq.isNullOrBlank()) {
             cachedList.add(data)
+            totalCount++
         }
 
         // 버퍼가 꽉 차면 DB에 저장하고 비움
         if (cachedList.size >= BATCH_COUNT) {
             saveData()
             cachedList.clear()
+        }
+
+        // [핵심] 제한 개수에 도달하면 중단
+        if (limitCount in 1..totalCount) {
+            saveData() // 남은 데이터 저장
+            cachedList.clear()
+            log.info(">>> 테스트 제한 설정($limitCount)에 도달하여 읽기를 중단합니다.")
+            throw ExcelAnalysisStopException() // 👈 EasyExcel 중단 신호
         }
     }
 
