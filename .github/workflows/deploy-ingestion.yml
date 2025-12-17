@@ -41,6 +41,13 @@ jobs:
           tags: ${{ env.DOCKER_IMAGE }}:latest
       - name: Deploy to Lightsail Server
         uses: appleboy/ssh-action@v1.0.3
+        env:
+          SPRING_DATASOURCE_URL: ${{ secrets.DB_URL }}
+          SPRING_DATASOURCE_USERNAME: ${{ secrets.DB_USERNAME }}
+          SPRING_DATASOURCE_PASSWORD: ${{ secrets.DB_PASSWORD }}
+          APP_FILE_PATH: ${{ secrets.APP_FILE_PATH }}
+          CONTAINER_NAME: ingestion-service
+          DOCKER_IMAGE: patrick5471/ingestion-service
         with:
           host: ${{ secrets.HOST_PROD }}
           username: ${{ secrets.USERNAME }}
