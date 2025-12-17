@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5e6bdd9f-c76c-417b-b9bd-d6e15a733b21" name="Changes" comment="docker 배포 기능 구현">
-      <change afterPath="$PROJECT_DIR$/ingestion-service/src/main/kotlin/com/qk54r71/ingestionservice/controller/BatchController.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/d85af986-7789-4c4f-8408-a536fa1049d1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/d85af986-7789-4c4f-8408-a536fa1049d1.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/d85af986-7789-4c4f-8408-a536fa1049d1/storage_v2/_src_/database/pofol.ZEpeBg/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/d85af986-7789-4c4f-8408-a536fa1049d1/storage_v2/_src_/database/pofol.ZEpeBg/schema/public.abK9xQ.meta" afterDir="false" />
+    <list default="true" id="5e6bdd9f-c76c-417b-b9bd-d6e15a733b21" name="Changes" comment="배치 작업 외부 호출 기능 구현">
+      <change afterPath="$PROJECT_DIR$/.github/workflows/deploy-ingestion.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -342,7 +340,7 @@
       <workItem from="1765427443924" duration="718000" />
       <workItem from="1765429102023" duration="2494000" />
       <workItem from="1765431631702" duration="235000" />
-      <workItem from="1765956363827" duration="4902000" />
+      <workItem from="1765956363827" duration="6302000" />
     </task>
     <task id="LOCAL-00001" summary="init gradle">
       <option name="closed" value="true" />
@@ -384,7 +382,15 @@
       <option name="project" value="LOCAL" />
       <updated>1765957254762</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="배치 작업 외부 호출 기능 구현">
+      <option name="closed" value="true" />
+      <created>1765962836954</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1765962836954</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -407,7 +413,8 @@
     <MESSAGE value="init gitignore" />
     <MESSAGE value="배치 기능 구현" />
     <MESSAGE value="docker 배포 기능 구현" />
-    <option name="LAST_COMMIT_MESSAGE" value="docker 배포 기능 구현" />
+    <MESSAGE value="배치 작업 외부 호출 기능 구현" />
+    <option name="LAST_COMMIT_MESSAGE" value="배치 작업 외부 호출 기능 구현" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

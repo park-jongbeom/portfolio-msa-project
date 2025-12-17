@@ -1,0 +1,83 @@
+name: Deploy Ingestion Service (Kotlin)
+
+on:
+  push:
+    branches: [ "master" ]
+    paths:
+      - 'ingestion-service/**'        # 이 폴더가 바뀔 때만 동작
+      - '.github/workflows/**'        # 스크립트 수정 시에도 동작
+
+env:
+  DOCKER_IMAGE: patrick5471/ingestion-service
+  CONTAINER_NAME: ingestion-service
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1. 소스 코드 가져오기
+      - name: Checkout Source Code
+        uses: actions/checkout@v4
+
+      # 2. JDK 17 세팅
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+
+      # 3. Gradle 권한 부여
+      - name: Grant execute permission for gradlew
+        run: chmod +x gradlew
+
+      # 4. Gradle 빌드 (ingestion-service 모듈만 빌드)
+      - name: Build with Gradle
+        run: ./gradlew clean :ingestion-service:bootJar -x test
+
+      # 5. Docker Hub 로그인
+      - name: Login to DockerHub
+        uses: docker/login-action@v3
+        with:
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
+
+      # 6. Docker 이미지 빌드 및 Push
+      - name: Build and Push Docker Image
+        uses: docker/build-push-action@v5
+        with:
+          context: .
+          file: ./ingestion-service/Dockerfile
+          push: true
+          tags: ${{ env.DOCKER_IMAGE }}:latest
+
+      # 7. 서버 접속 및 배포 (SSH)
+      - name: Deploy to Lightsail Server
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.HOST_PROD }}
+          username: ${{ secrets.USERNAME }}
+          key: ${{ secrets.SSH_KEY }}
+          script: |
+            # 1. 기존 컨테이너 중지 및 삭제
+            sudo docker stop ${{ env.CONTAINER_NAME }} || true
+            sudo docker rm ${{ env.CONTAINER_NAME }} || true
+            
+            # 2. 불필요한 이미지 정리 (용량 확보)
+            sudo docker image prune -f
+            
+            # 3. 최신 이미지 다운로드
+            sudo docker pull ${{ env.DOCKER_IMAGE }}:latest
+            
+            # 4. 컨테이너 실행 (옵션 주의!)
+            sudo docker run -d \
+              --name ${{ env.CONTAINER_NAME }} \
+              --network host \
+              -e SERVER_PORT=3001 \
+              -e TZ=Asia/Seoul \
+              -e JAVA_TOOL_OPTIONS="-Xmx400m" \
+              -v /home/ubuntu/data:/data/download \
+              -e SPRING_DATASOURCE_URL='${{ secrets.DB_URL }}' \
+              -e SPRING_DATASOURCE_USERNAME='${{ secrets.DB_USERNAME }}' \
+              -e SPRING_DATASOURCE_PASSWORD='${{ secrets.DB_PASSWORD }}' \
+              ${{ env.DOCKER_IMAGE }}:latest
