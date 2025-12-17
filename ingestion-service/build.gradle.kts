@@ -6,6 +6,7 @@ plugins {
     id("io.spring.dependency-management")
     kotlin("jvm")
     kotlin("plugin.spring")
+    kotlin("plugin.jpa") version "1.9.22"
 }
 
 group = "com.qk54r71"

@@ -4,7 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5e6bdd9f-c76c-417b-b9bd-d6e15a733b21" name="Changes" comment="배치 작업 gitaction 연동 기능 구현&#10;- 워크플로우 설정" />
+    <list default="true" id="5e6bdd9f-c76c-417b-b9bd-d6e15a733b21" name="Changes" comment="배치 작업 gitaction 연동 기능 구현&#10;- 환경 변수 설정. job 히스토리 테이블 자동 구현 처리">
+      <change beforePath="$PROJECT_DIR$/.gradle/8.8/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.8/checksums/checksums.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.8/checksums/md5-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.8/checksums/md5-checksums.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.8/checksums/sha1-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.8/checksums/sha1-checksums.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.8/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.8/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ingestion-service/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/ingestion-service/build.gradle.kts" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -350,7 +358,7 @@
       <workItem from="1765427443924" duration="718000" />
       <workItem from="1765429102023" duration="2494000" />
       <workItem from="1765431631702" duration="235000" />
-      <workItem from="1765956363827" duration="9822000" />
+      <workItem from="1765956363827" duration="10586000" />
     </task>
     <task id="LOCAL-00001" summary="init gradle">
       <option name="closed" value="true" />
@@ -440,7 +448,15 @@
       <option name="project" value="LOCAL" />
       <updated>1765966936161</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="배치 작업 gitaction 연동 기능 구현&#10;- 환경 변수 설정. job 히스토리 테이블 자동 구현 처리">
+      <option name="closed" value="true" />
+      <created>1765967854683</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1765967854684</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -468,7 +484,8 @@
     <MESSAGE value="배치 작업 gitaction 연동 기능 구현&#10;- 환경변수 재설정" />
     <MESSAGE value="배치 작업 gitaction 연동 기능 구현&#10;- 환경 설정 파일 분리 진행" />
     <MESSAGE value="배치 작업 gitaction 연동 기능 구현&#10;- 워크플로우 설정" />
-    <option name="LAST_COMMIT_MESSAGE" value="배치 작업 gitaction 연동 기능 구현&#10;- 워크플로우 설정" />
+    <MESSAGE value="배치 작업 gitaction 연동 기능 구현&#10;- 환경 변수 설정. job 히스토리 테이블 자동 구현 처리" />
+    <option name="LAST_COMMIT_MESSAGE" value="배치 작업 gitaction 연동 기능 구현&#10;- 환경 변수 설정. job 히스토리 테이블 자동 구현 처리" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
