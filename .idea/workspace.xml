@@ -4,8 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5e6bdd9f-c76c-417b-b9bd-d6e15a733b21" name="Changes" comment="배치 작업 gitaction 연동 기능 구현&#10;- 환경변수 재설정">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="5e6bdd9f-c76c-417b-b9bd-d6e15a733b21" name="Changes" comment="배치 작업 gitaction 연동 기능 구현&#10;- 환경 설정 파일 분리 진행">
+      <change beforePath="$PROJECT_DIR$/.github/workflows/deploy-ingestion.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/deploy-ingestion.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -353,7 +353,7 @@
       <workItem from="1765427443924" duration="718000" />
       <workItem from="1765429102023" duration="2494000" />
       <workItem from="1765431631702" duration="235000" />
-      <workItem from="1765956363827" duration="7876000" />
+      <workItem from="1765956363827" duration="8683000" />
     </task>
     <task id="LOCAL-00001" summary="init gradle">
       <option name="closed" value="true" />
@@ -419,7 +419,15 @@
       <option name="project" value="LOCAL" />
       <updated>1765964791483</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="배치 작업 gitaction 연동 기능 구현&#10;- 환경 설정 파일 분리 진행">
+      <option name="closed" value="true" />
+      <created>1765965805277</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1765965805277</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -445,7 +453,8 @@
     <MESSAGE value="배치 작업 외부 호출 기능 구현" />
     <MESSAGE value="배치 작업 gitaction 연동 기능 구현" />
     <MESSAGE value="배치 작업 gitaction 연동 기능 구현&#10;- 환경변수 재설정" />
-    <option name="LAST_COMMIT_MESSAGE" value="배치 작업 gitaction 연동 기능 구현&#10;- 환경변수 재설정" />
+    <MESSAGE value="배치 작업 gitaction 연동 기능 구현&#10;- 환경 설정 파일 분리 진행" />
+    <option name="LAST_COMMIT_MESSAGE" value="배치 작업 gitaction 연동 기능 구현&#10;- 환경 설정 파일 분리 진행" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
