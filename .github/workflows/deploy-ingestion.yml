@@ -77,6 +77,7 @@ jobs:
               -e TZ=Asia/Seoul \
               -e JAVA_TOOL_OPTIONS="-Xmx400m" \
               -v /home/ubuntu/data:/data/download \
+              -e APP_DRUG_DATA_FILE_PATH='build/download/' \
               -e SPRING_DATASOURCE_URL='${{ secrets.DB_URL }}' \
               -e SPRING_DATASOURCE_USERNAME='${{ secrets.DB_USERNAME }}' \
               -e SPRING_DATASOURCE_PASSWORD='${{ secrets.DB_PASSWORD }}' \

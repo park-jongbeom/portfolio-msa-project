@@ -4,8 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5e6bdd9f-c76c-417b-b9bd-d6e15a733b21" name="Changes" comment="배치 작업 외부 호출 기능 구현">
-      <change afterPath="$PROJECT_DIR$/.github/workflows/deploy-ingestion.yml" afterDir="false" />
+    <list default="true" id="5e6bdd9f-c76c-417b-b9bd-d6e15a733b21" name="Changes" comment="배치 작업 gitaction 연동 기능 구현">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -85,6 +84,13 @@
   <component name="GithubDefaultAccount">
     <option name="defaultAccountId" value="a9ca2fba-486f-431e-a19b-692e7e5c9f9a" />
   </component>
+  <component name="HttpClientSelectedEnvironments">
+    <file url="jar://$APPLICATION_HOME_DIR$/plugins/restClient/lib/restClient.jar!/com/intellij/ws/rest/client/requests/collection/post-requests.http" environment="test" />
+  </component>
+  <component name="KubernetesApiPersistence"><![CDATA[{}]]></component>
+  <component name="KubernetesApiProvider"><![CDATA[{
+  "isMigrated": true
+}]]></component>
   <component name="PhpDebugGeneral" listening_started="true" />
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 1
@@ -95,47 +101,48 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Gradle.Build portfolio-msa-project.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.DrugInfoUpdateJobTest.실제_사이트에서_오늘자_엑셀을_다운받아_DB에_적재한다 (1).executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.DrugInfoUpdateJobTest.실제_사이트에서_오늘자_엑셀을_다운받아_DB에_적재한다.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.portfolio-msa-project [build].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.portfolio-msa-project [clean].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.portfolio-msa-project:ingestion-service [clean].executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.Whole project (1).executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.Whole project (2).executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.Whole project.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowPanel.toolwindow.highlight.mappings&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowPanel.toolwindow.highlight.symlinks&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowPanel.toolwindow.show.date&quot;: &quot;false&quot;,
-    &quot;WebServerToolWindowPanel.toolwindow.show.permissions&quot;: &quot;false&quot;,
-    &quot;WebServerToolWindowPanel.toolwindow.show.size&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;corretto-17&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/qk54r/IdeaProjects/portfolio-msa-project/ingestion-service/src/test/resources&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.291954&quot;,
-    &quot;run.configurations.included.in.services&quot;: &quot;true&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.project.gradle&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Gradle.Build portfolio-msa-project.executor": "Run",
+    "Gradle.DrugInfoUpdateJobTest.실제_사이트에서_오늘자_엑셀을_다운받아_DB에_적재한다 (1).executor": "Run",
+    "Gradle.DrugInfoUpdateJobTest.실제_사이트에서_오늘자_엑셀을_다운받아_DB에_적재한다.executor": "Run",
+    "Gradle.portfolio-msa-project [build].executor": "Run",
+    "Gradle.portfolio-msa-project [clean].executor": "Run",
+    "Gradle.portfolio-msa-project:ingestion-service [clean].executor": "Run",
+    "HTTP Request.rest-api_9 | #1.executor": "Run",
+    "JUnit.Whole project (1).executor": "Run",
+    "JUnit.Whole project (2).executor": "Run",
+    "JUnit.Whole project.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowPanel.toolwindow.highlight.mappings": "true",
+    "WebServerToolWindowPanel.toolwindow.highlight.symlinks": "true",
+    "WebServerToolWindowPanel.toolwindow.show.date": "false",
+    "WebServerToolWindowPanel.toolwindow.show.permissions": "false",
+    "WebServerToolWindowPanel.toolwindow.show.size": "false",
+    "git-widget-placeholder": "master",
+    "ignore.virus.scanning.warn.message": "true",
+    "jdk.selected.JAVA_MODULE": "corretto-17",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/qk54r/IdeaProjects/portfolio-msa-project/ingestion-service/src/test/resources",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.291954",
+    "run.configurations.included.in.services": "true",
+    "settings.editor.selected.configurable": "reference.settingsdialog.project.gradle",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;postgresql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "postgresql"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\qk54r\IdeaProjects\portfolio-msa-project\ingestion-service\src\test\resources" />
@@ -252,6 +259,9 @@
       <RunAsTest>false</RunAsTest>
       <method v="2" />
     </configuration>
+    <configuration name="rest-api_9 | #1" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/rest-api_9.http" requestIdentifier="#1" runType="Run single request">
+      <method v="2" />
+    </configuration>
     <configuration name="ApiGatewayServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="portfolio-msa-project.api-gateway-service.main" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.qk54r71.apigatewayservice.ApiGatewayServiceApplication" />
@@ -285,6 +295,7 @@
       <item itemvalue="Gradle.portfolio-msa-project [build]" />
       <item itemvalue="Gradle.portfolio-msa-project [clean]" />
       <item itemvalue="Gradle.portfolio-msa-project:ingestion-service [clean]" />
+      <item itemvalue="HTTP Request.rest-api_9 | #1" />
       <item itemvalue="Spring Boot.ApiGatewayServiceApplication" />
       <item itemvalue="Spring Boot.CommonModuleApplication" />
       <item itemvalue="Spring Boot.IngestionServiceApplication" />
@@ -292,6 +303,7 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="HTTP Request.rest-api_9 | #1" />
         <item itemvalue="Gradle.DrugInfoUpdateJobTest.실제_사이트에서_오늘자_엑셀을_다운받아_DB에_적재한다" />
         <item itemvalue="Gradle.portfolio-msa-project [build]" />
         <item itemvalue="Gradle.portfolio-msa-project [clean]" />
@@ -340,7 +352,7 @@
       <workItem from="1765427443924" duration="718000" />
       <workItem from="1765429102023" duration="2494000" />
       <workItem from="1765431631702" duration="235000" />
-      <workItem from="1765956363827" duration="6302000" />
+      <workItem from="1765956363827" duration="6988000" />
     </task>
     <task id="LOCAL-00001" summary="init gradle">
       <option name="closed" value="true" />
@@ -390,7 +402,15 @@
       <option name="project" value="LOCAL" />
       <updated>1765962836954</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="배치 작업 gitaction 연동 기능 구현">
+      <option name="closed" value="true" />
+      <created>1765964041157</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1765964041157</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -414,7 +434,8 @@
     <MESSAGE value="배치 기능 구현" />
     <MESSAGE value="docker 배포 기능 구현" />
     <MESSAGE value="배치 작업 외부 호출 기능 구현" />
-    <option name="LAST_COMMIT_MESSAGE" value="배치 작업 외부 호출 기능 구현" />
+    <MESSAGE value="배치 작업 gitaction 연동 기능 구현" />
+    <option name="LAST_COMMIT_MESSAGE" value="배치 작업 gitaction 연동 기능 구현" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
