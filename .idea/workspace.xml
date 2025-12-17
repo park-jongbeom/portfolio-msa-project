@@ -4,26 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5e6bdd9f-c76c-417b-b9bd-d6e15a733b21" name="Changes" comment="배치 기능 구현">
-      <change afterPath="$PROJECT_DIR$/ingestion-service/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.8/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.8/executionHistory/executionHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.8/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.8/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.8/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.8/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+    <list default="true" id="5e6bdd9f-c76c-417b-b9bd-d6e15a733b21" name="Changes" comment="docker 배포 기능 구현">
+      <change afterPath="$PROJECT_DIR$/ingestion-service/src/main/kotlin/com/qk54r71/ingestionservice/controller/BatchController.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/d85af986-7789-4c4f-8408-a536fa1049d1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/d85af986-7789-4c4f-8408-a536fa1049d1.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/d85af986-7789-4c4f-8408-a536fa1049d1/storage_v2/_src_/database/pofol.ZEpeBg/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/d85af986-7789-4c4f-8408-a536fa1049d1/storage_v2/_src_/database/pofol.ZEpeBg/schema/public.abK9xQ.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common-module/src/main/kotlin/com/qk54r71/commonmodule/domain/entity/DrugMaster.kt" beforeDir="false" afterPath="$PROJECT_DIR$/common-module/src/main/kotlin/com/qk54r71/commonmodule/domain/entity/DrugMaster.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ingestion-service/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/ingestion-service/build.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ingestion-service/src/main/kotlin/com/qk54r71/ingestionservice/config/BatchJobConfig.kt" beforeDir="false" afterPath="$PROJECT_DIR$/ingestion-service/src/main/kotlin/com/qk54r71/ingestionservice/config/BatchJobConfig.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ingestion-service/src/main/kotlin/com/qk54r71/ingestionservice/dto/DrugPermitExcelDto.kt" beforeDir="false" afterPath="$PROJECT_DIR$/ingestion-service/src/main/kotlin/com/qk54r71/ingestionservice/dto/DrugPermitExcelDto.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ingestion-service/src/main/kotlin/com/qk54r71/ingestionservice/listener/DrugPermitExcelListener.kt" beforeDir="false" afterPath="$PROJECT_DIR$/ingestion-service/src/main/kotlin/com/qk54r71/ingestionservice/listener/DrugPermitExcelListener.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ingestion-service/src/test/kotlin/com/qk54r71/ingestionservice/DrugInfoUpdateJobTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/ingestion-service/src/test/kotlin/com/qk54r71/ingestionservice/DrugInfoUpdateJobTest.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ingestion-service/src/test/resources/OpenData_ItemPermitDetail20251126.xls" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ingestion-service/src/test/resources/application-test.yml" beforeDir="false" afterPath="$PROJECT_DIR$/ingestion-service/src/test/resources/application-test.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -357,6 +342,7 @@
       <workItem from="1765427443924" duration="718000" />
       <workItem from="1765429102023" duration="2494000" />
       <workItem from="1765431631702" duration="235000" />
+      <workItem from="1765956363827" duration="4902000" />
     </task>
     <task id="LOCAL-00001" summary="init gradle">
       <option name="closed" value="true" />
@@ -390,7 +376,15 @@
       <option name="project" value="LOCAL" />
       <updated>1764309507710</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="docker 배포 기능 구현">
+      <option name="closed" value="true" />
+      <created>1765957254762</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1765957254762</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -412,7 +406,8 @@
     <MESSAGE value="init readme write" />
     <MESSAGE value="init gitignore" />
     <MESSAGE value="배치 기능 구현" />
-    <option name="LAST_COMMIT_MESSAGE" value="배치 기능 구현" />
+    <MESSAGE value="docker 배포 기능 구현" />
+    <option name="LAST_COMMIT_MESSAGE" value="docker 배포 기능 구현" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

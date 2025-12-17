@@ -6,31 +6,39 @@ import org.springframework.batch.core.launch.JobLauncher
 import org.springframework.scheduling.annotation.Scheduled
 import org.springframework.stereotype.Component
 import java.time.LocalDateTime
+import org.slf4j.LoggerFactory // 로거 추가
+import org.springframework.scheduling.annotation.Async
 
 @Component
 class BatchScheduler(
     private val jobLauncher: JobLauncher,
     private val drugInfoUpdateJob: Job
 ) {
-    // 매일 새벽 5시에 실행
+    private val log = LoggerFactory.getLogger(javaClass)
+
+    // 1. [스케줄러용] 매일 새벽 5시에 runJob()을 호출
     @Scheduled(cron = "0 0 5 * * *", zone = "Asia/Seoul")
     fun runDailyIngestion() {
-        println(">>> [Scheduler] 식약처 데이터 업데이트 배치 시작: ${LocalDateTime.now()}")
+        log.info("⏰ 스케줄러에 의해 배치가 실행됩니다.")
+        runJob() // 아래 공용 메서드 호출
+    }
+
+    @Async
+    fun runJob() {
+        log.info(">>> [Batch] 식약처 데이터 업데이트 배치 시작: ${LocalDateTime.now()}")
 
         try {
-            // 1. Job 파라미터 생성 (중요!)
-            // 매일 새로운 Job Instance로 인식되게 하려면, 실행 시점의 시간을 파라미터로 넣어줘야 합니다.
+            // Job 파라미터 생성 (중복 실행 방지용 timestamp 필수)
             val jobParameters = JobParametersBuilder()
                 .addString("requestDate", LocalDateTime.now().toString())
-                .addLong("timestamp", System.currentTimeMillis()) // 확실한 중복 방지용
+                .addLong("timestamp", System.currentTimeMillis())
                 .toJobParameters()
 
-            // 2. Job 실행
+            // Job 실행
             jobLauncher.run(drugInfoUpdateJob, jobParameters)
 
         } catch (e: Exception) {
-            println(">>> [Scheduler] 배치 실행 중 오류 발생")
-            e.printStackTrace()
+            log.error(">>> [Batch] 배치 실행 중 오류 발생", e)
         }
     }
 }
