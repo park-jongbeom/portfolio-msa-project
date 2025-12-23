@@ -7,6 +7,7 @@ plugins {
     id("io.spring.dependency-management") version "1.1.7" apply false
     kotlin("jvm") version "1.9.25" apply false
     kotlin("plugin.spring") version "1.9.25" apply false
+    kotlin("plugin.jpa") version "1.9.25" apply false
 }
 
 // 각 하위 모듈에 공통적으로 적용할 설정만 남깁니다.
