@@ -2,12 +2,12 @@ package com.qk54r71.ingestionservice.config
 
 import com.alibaba.excel.EasyExcel
 import com.alibaba.excel.exception.ExcelAnalysisStopException
-import com.qk54r71.ingestionservice.tasklet.NedrugDownloadTasklet
-import com.qk54r71.ingestionservice.listener.DrugPermitExcelListener
 import com.qk54r71.ingestionservice.dto.DrugPermitExcelDto
+import com.qk54r71.ingestionservice.listener.DrugPermitExcelListener
 import com.qk54r71.ingestionservice.listener.JobLoggingListener
 import com.qk54r71.ingestionservice.repository.DrugMasterRepository
 import com.qk54r71.ingestionservice.repository.DrugSpecRepository
+import com.qk54r71.ingestionservice.tasklet.NedrugDownloadTasklet
 import org.springframework.batch.core.Job
 import org.springframework.batch.core.Step
 import org.springframework.batch.core.job.builder.JobBuilder
@@ -64,7 +64,12 @@ class BatchJobConfig(
                             filePath,
                             DrugPermitExcelDto::class.java,
                             // Listener에 limit 값 전달
-                            DrugPermitExcelListener(drugMasterRepository, drugSpecRepository, readLimit)
+                            DrugPermitExcelListener(
+                                drugMasterRepository,
+                                drugSpecRepository,
+                                transactionManager,
+                                readLimit
+                            )
                         )
                             .sheet()
                             .doRead()

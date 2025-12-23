@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5e6bdd9f-c76c-417b-b9bd-d6e15a733b21" name="Changes" comment="프로젝트 시작시, 기존 종료된 작업을 체크하여 재시작 하는 코드 추가">
+    <list default="true" id="5e6bdd9f-c76c-417b-b9bd-d6e15a733b21" name="Changes" comment="jpa 플러그인 추가">
+      <change beforePath="$PROJECT_DIR$/.gradle/8.8/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.8/checksums/checksums.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.8/checksums/md5-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.8/checksums/md5-checksums.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.8/checksums/sha1-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.8/checksums/sha1-checksums.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.8/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.8/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -357,6 +361,10 @@
       <workItem from="1766020651062" duration="190000" />
       <workItem from="1766020862407" duration="9000" />
       <workItem from="1766047499310" duration="112000" />
+      <workItem from="1766499356573" duration="2866000" />
+      <workItem from="1766509258056" duration="28000" />
+      <workItem from="1766512310533" duration="44000" />
+      <workItem from="1766513215250" duration="345000" />
     </task>
     <task id="LOCAL-00001" summary="init gradle">
       <option name="closed" value="true" />
@@ -486,7 +494,15 @@
       <option name="project" value="LOCAL" />
       <updated>1765969764547</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="jpa 플러그인 추가">
+      <option name="closed" value="true" />
+      <created>1766505904943</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1766505904943</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -519,7 +535,8 @@
     <MESSAGE value="운영 설정 추가&#10;- 종료 대기 시간 추가&#10;- 우아한 종료 활성화 처리" />
     <MESSAGE value="job 진행 중에 종료시, 현재 진행 중인 청크까지 작업하고 종료 처리하도록 코드 처리" />
     <MESSAGE value="프로젝트 시작시, 기존 종료된 작업을 체크하여 재시작 하는 코드 추가" />
-    <option name="LAST_COMMIT_MESSAGE" value="프로젝트 시작시, 기존 종료된 작업을 체크하여 재시작 하는 코드 추가" />
+    <MESSAGE value="jpa 플러그인 추가" />
+    <option name="LAST_COMMIT_MESSAGE" value="jpa 플러그인 추가" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

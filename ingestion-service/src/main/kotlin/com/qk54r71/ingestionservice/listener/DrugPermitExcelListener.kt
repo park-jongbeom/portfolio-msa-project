@@ -9,6 +9,9 @@ import com.qk54r71.ingestionservice.dto.DrugPermitExcelDto
 import com.qk54r71.ingestionservice.repository.DrugMasterRepository
 import com.qk54r71.ingestionservice.repository.DrugSpecRepository
 import org.slf4j.LoggerFactory
+import org.springframework.transaction.PlatformTransactionManager
+import org.springframework.transaction.TransactionDefinition
+import org.springframework.transaction.support.TransactionTemplate
 
 /**
  * 엑셀 데이터를 읽어서 DB에 적재하는 리스너
@@ -17,6 +20,7 @@ import org.slf4j.LoggerFactory
 class DrugPermitExcelListener(
     private val drugMasterRepository: DrugMasterRepository,
     private val drugSpecRepository: DrugSpecRepository,
+    private val transactionManager: PlatformTransactionManager,
     private val limitCount: Long = -1 // 👈 제한 개수 추가 (기본값 -1: 무제한)
 ) : ReadListener<DrugPermitExcelDto> {
 
@@ -60,26 +64,36 @@ class DrugPermitExcelListener(
 
     /**
      * 실제 DB 저장 로직 (Master / Spec 분리 저장)
-     * 주의: 이 클래스는 Spring Bean이 아니므로 @Transactional이 동작하지 않습니다.
-     * Repository의 save()는 자체적으로 트랜잭션을 가집니다.
+     * 트랜잭션 템플릿을 사용하여 즉시 커밋 처리
      */
     private fun saveData() {
         if (cachedList.isEmpty()) return
 
-        log.info(">>> ${cachedList.size}건 데이터 DB 처리 중...")
+        log.info(">>> ${cachedList.size}건 데이터 DB 처리 중... (Transaction 시작)")
 
-        for (dto in cachedList) {
-            try {
-                processUpsert(dto)
-            } catch (e: Exception) {
-                // 🚨 에러 발생 시 상세 분석 로그 출력
-                logErrorDetail(dto, e)
+        // 수동 트랜잭션 생성
+        val transactionTemplate = TransactionTemplate(transactionManager)
+        // REQUIRES_NEW: 이미 실행 중인(Tasklet) 트랜잭션과 상관없이 "독립적인" 새 트랜잭션을 엽니다.
+        transactionTemplate.propagationBehavior = TransactionDefinition.PROPAGATION_REQUIRES_NEW
 
-                // 분석 후에는 테스트가 실패하도록 예외를 다시 던집니다.
-                // (배치 중단 방지를 원하시면 throw 대신 continue를 쓸 수 있지만,
-                // 지금은 원인 파악이 우선이므로 throw 합니다.)
-                throw e
+        try {
+            // 이 블록이 정상 종료되면 즉시 COMMIT 됩니다.
+            transactionTemplate.execute { status ->
+                for (dto in cachedList) {
+                    try {
+                        processUpsert(dto)
+                    } catch (e: Exception) {
+                        logErrorDetail(dto, e)
+                        // 여기서 예외를 던지면 현재 Chunk(100개)는 롤백됩니다.
+                        // 전체 Job을 멈추고 싶다면 throw e
+                        throw e
+                    }
+                }
             }
+            log.info("✅ ${cachedList.size}건 처리 완료 및 커밋됨.") // 커밋 확인 로그
+        } catch (e: Exception) {
+            log.error("❌ 배치 저장 중 치명적 오류 발생 (해당 청크 롤백됨)", e)
+            throw e
         }
     }
 
