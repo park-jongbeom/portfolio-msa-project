@@ -8,11 +8,11 @@ data class BatchJobHistory(
     val historyId: Long? = null,
 
     // 2. 배치 정보
-    var jobName: String,
+    var jobName: String = "",
 
-    var status: String, // "SUCCESS" 또는 "FAILED"
+    var status: String = "", // "SUCCESS" 또는 "FAILED"
 
-    val startTime: Instant, // 시작 시간은 불변
+    val startTime: Instant = Instant.now(), // 시작 시간은 불변
 
     var endTime: Instant? = null, // 종료 시간은 Nullable
 

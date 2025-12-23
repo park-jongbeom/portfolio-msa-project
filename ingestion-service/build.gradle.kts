@@ -6,7 +6,6 @@ plugins {
     id("io.spring.dependency-management")
     kotlin("jvm")
     kotlin("plugin.spring")
-    kotlin("plugin.jpa")
 }
 
 group = "com.qk54r71"

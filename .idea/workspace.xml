@@ -4,12 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5e6bdd9f-c76c-417b-b9bd-d6e15a733b21" name="Changes" comment="jpa 플러그인 추가">
-      <change beforePath="$PROJECT_DIR$/.gradle/8.8/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.8/checksums/checksums.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.8/checksums/md5-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.8/checksums/md5-checksums.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.8/checksums/sha1-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.8/checksums/sha1-checksums.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.8/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.8/fileHashes/fileHashes.lock" afterDir="false" />
+    <list default="true" id="5e6bdd9f-c76c-417b-b9bd-d6e15a733b21" name="Changes" comment="100개 작업마다 트랜잭션 처리되도록 수정">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common-module/src/main/kotlin/com/qk54r71/commonmodule/domain/entity/BatchJobHistory.kt" beforeDir="false" afterPath="$PROJECT_DIR$/common-module/src/main/kotlin/com/qk54r71/commonmodule/domain/entity/BatchJobHistory.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common-module/src/main/kotlin/com/qk54r71/commonmodule/domain/entity/DrugMaster.kt" beforeDir="false" afterPath="$PROJECT_DIR$/common-module/src/main/kotlin/com/qk54r71/commonmodule/domain/entity/DrugMaster.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common-module/src/main/kotlin/com/qk54r71/commonmodule/domain/entity/DrugSpec.kt" beforeDir="false" afterPath="$PROJECT_DIR$/common-module/src/main/kotlin/com/qk54r71/commonmodule/domain/entity/DrugSpec.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ingestion-service/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/ingestion-service/build.gradle.kts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -364,7 +365,7 @@
       <workItem from="1766499356573" duration="2866000" />
       <workItem from="1766509258056" duration="28000" />
       <workItem from="1766512310533" duration="44000" />
-      <workItem from="1766513215250" duration="345000" />
+      <workItem from="1766513215250" duration="1997000" />
     </task>
     <task id="LOCAL-00001" summary="init gradle">
       <option name="closed" value="true" />
@@ -502,7 +503,15 @@
       <option name="project" value="LOCAL" />
       <updated>1766505904943</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="100개 작업마다 트랜잭션 처리되도록 수정">
+      <option name="closed" value="true" />
+      <created>1766513848287</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1766513848287</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -536,7 +545,8 @@
     <MESSAGE value="job 진행 중에 종료시, 현재 진행 중인 청크까지 작업하고 종료 처리하도록 코드 처리" />
     <MESSAGE value="프로젝트 시작시, 기존 종료된 작업을 체크하여 재시작 하는 코드 추가" />
     <MESSAGE value="jpa 플러그인 추가" />
-    <option name="LAST_COMMIT_MESSAGE" value="jpa 플러그인 추가" />
+    <MESSAGE value="100개 작업마다 트랜잭션 처리되도록 수정" />
+    <option name="LAST_COMMIT_MESSAGE" value="100개 작업마다 트랜잭션 처리되도록 수정" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

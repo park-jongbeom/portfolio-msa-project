@@ -10,14 +10,14 @@ data class DrugMaster(
     val masterId: Long? = null,
 
     // 2. 비즈니스 키 (CDC 기준 - 품목일련번호)
-    var itemSeq: String,
+    var itemSeq: String = "",
 
     // 3. 기본 정보
-    var productNameKo: String,
+    var productNameKo: String = "",
 
     var productNameEn: String? = "",
 
-    var companyName: String,
+    var companyName: String = "",
 
     var companyNameEn: String? = "",
 

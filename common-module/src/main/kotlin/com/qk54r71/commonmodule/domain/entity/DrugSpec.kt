@@ -9,7 +9,7 @@ data class DrugSpec(
     val specId: Long? = null,
 
     // 2. 마스터 테이블 참조 ID (FK)
-    var masterId: Long,
+    var masterId: Long = Long.MIN_VALUE,
 
     // 3. 각종 식별 코드
     var standardCode: String? = null, // 표준코드
