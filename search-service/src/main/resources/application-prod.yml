@@ -1,0 +1,8 @@
+spring:
+  r2dbc: # jdbc 대신 r2dbc 사용
+    url: ${SPRING_DATASOURCE_URL_R2DBC}
+    username: ${SPRING_DATASOURCE_USERNAME}
+    password: ${SPRING_DATASOURCE_PASSWORD}
+    pool:
+      initial-size: 5
+      max-size: 20
