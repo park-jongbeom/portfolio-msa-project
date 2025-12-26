@@ -1,3 +1,10 @@
+server:
+  port: 3002
+
+grpc:
+  server:
+    port: 9092
+
 spring:
   application:
     name: search-service
