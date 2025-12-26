@@ -1,0 +1,38 @@
+syntax = "proto3";
+
+package com.qk54r71.commonmodule.grpc; // 생성될 패키지 경로
+
+option java_multiple_files = true;
+option java_package = "com.qk54r71.commonmodule.grpc";
+
+// 1. 서비스 정의
+service DrugSearchService {
+  // 검색 요청을 받아서 -> 목록을 반환
+  rpc SearchDrugs (DrugSearchRequest) returns (DrugSearchResponse);
+}
+
+// 2. 요청 메시지 (키워드, 페이지, 사이즈)
+message DrugSearchRequest {
+  string keyword = 1;
+  int32 page = 2;
+  int32 size = 3;
+}
+
+// 3. 응답 메시지 (결과 목록)
+message DrugSearchResponse {
+  repeated DrugInfoData data = 1; // 리스트 형태
+  int64 total_count = 2;          // (선택) 전체 개수
+}
+
+// 4. 개별 데이터 구조 (기존 DTO와 매핑될 구조)
+message DrugInfoData {
+  string item_seq = 1;
+  string product_name_ko = 2;
+  string product_name_en = 3;
+  string company_name = 4;
+  string item_type = 5;
+  string main_ingredient = 6;
+  string efficacy_url = 7;
+  string dosage_url = 8;
+  string permit_date = 9; // 날짜는 문자열로 전달하는게 편함 (yyyy-MM-dd)
+}

@@ -10,4 +10,7 @@ dependencies {
     implementation("org.springframework.boot:spring-boot-starter-data-r2dbc")
     runtimeOnly("org.postgresql:r2dbc-postgresql")
     implementation(project(":common-module"))
+
+    // [중요] gRPC 클라이언트 구동용 라이브러리
+    implementation("net.devh:grpc-client-spring-boot-starter:3.1.0.RELEASE")
 }
