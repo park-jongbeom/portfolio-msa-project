@@ -5,7 +5,8 @@ on:
     branches: [ "master" ]
     paths:
       - 'ingestion-service/**'        # 이 폴더가 바뀔 때만 동작
-      - '.github/workflows/**'        # 스크립트 수정 시에도 동작
+      - 'common-module/**'            # 공통 모듈이 바뀌어도 실행
+      - '.github/workflows/deploy-ingestion.yml'
 
 env:
   DOCKER_IMAGE: patrick5471/ingestion-service
