@@ -63,7 +63,7 @@ class DrugSearchRepository(
                 mainIngredient = row.get("main_ingredient", String::class.java),
                 efficacyUrl = row.get("efficacy_url", String::class.java),
                 dosageUrl = row.get("dosage_url", String::class.java),
-                permitDate = row.get("permit_date", java.time.LocalDate::class.java)
+                permitDate = row.get("permit_date", String::class.java)
             )
         }.all()
     }

@@ -11,5 +11,5 @@ data class DrugSearchResponseDto(
     val mainIngredient: String?,   // 주성분 (Spec 테이블)
     val efficacyUrl: String?,      // 효능효과 URL (Spec 테이블)
     val dosageUrl: String?,        // 용법용량 URL (Spec 테이블)
-    val permitDate: LocalDate?     // 허가일자
+    val permitDate: String?     // 허가일자
 )
