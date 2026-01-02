@@ -4,8 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5e6bdd9f-c76c-417b-b9bd-d6e15a733b21" name="Changes" comment="orm 컬럼 타입 수정">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/d85af986-7789-4c4f-8408-a536fa1049d1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/d85af986-7789-4c4f-8408-a536fa1049d1.xml" afterDir="false" />
+    <list default="true" id="5e6bdd9f-c76c-417b-b9bd-d6e15a733b21" name="Changes" comment="공통 예외 처리 구현">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -74,12 +73,17 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Kotlin Interface" />
-        <option value="Kotlin Class" />
         <option value="Kotlin Data Class" />
+        <option value="Kotlin Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="search/build" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GithubDefaultAccount">
@@ -110,6 +114,7 @@
     &quot;Gradle.portfolio-msa-project [build].executor&quot;: &quot;Run&quot;,
     &quot;Gradle.portfolio-msa-project [clean].executor&quot;: &quot;Run&quot;,
     &quot;Gradle.portfolio-msa-project:ingestion-service [clean].executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.rest-api_12 | #1.executor&quot;: &quot;Run&quot;,
     &quot;HTTP Request.rest-api_9 | #1.executor&quot;: &quot;Run&quot;,
     &quot;JUnit.Whole project (1).executor&quot;: &quot;Run&quot;,
     &quot;JUnit.Whole project (2).executor&quot;: &quot;Run&quot;,
@@ -146,12 +151,14 @@
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\qk54r\IdeaProjects\portfolio-msa-project\.github\workflows" />
+      <recent name="C:\Users\qk54r\IdeaProjects\portfolio-msa-project\search-service" />
       <recent name="C:\Users\qk54r\IdeaProjects\portfolio-msa-project\search-service\src\main\resources" />
       <recent name="C:\Users\qk54r\IdeaProjects\portfolio-msa-project\ingestion-service\src\main\resources" />
       <recent name="C:\Users\qk54r\IdeaProjects\portfolio-msa-project\ingestion-service\src\test\resources" />
-      <recent name="C:\Users\qk54r\IdeaProjects\portfolio-msa-project\api-gateway-service\src\main\resources" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\qk54r\IdeaProjects\portfolio-msa-project\common-module\src\main\proto" />
       <recent name="C:\Users\qk54r\IdeaProjects\portfolio-msa-project" />
     </key>
     <key name="CopyKotlinDeclarationDialog.RECENTS_KEY">
@@ -171,30 +178,6 @@
     </option>
   </component>
   <component name="RunManager" selected="Spring Boot.IngestionServiceApplication">
-    <configuration name="DrugInfoUpdateJobTest.실제_사이트에서_오늘자_엑셀을_다운받아_DB에_적재한다" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":ingestion-service:test" />
-            <option value="--tests" />
-            <option value="&quot;com.qk54r71.ingestionservice.DrugInfoUpdateJobTest.실제_사이트에서_오늘자_엑셀을_다운받아_DB에_적재한다&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>true</RunAsTest>
-      <method v="2" />
-    </configuration>
     <configuration name="portfolio-msa-project [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -261,6 +244,9 @@
       <RunAsTest>false</RunAsTest>
       <method v="2" />
     </configuration>
+    <configuration name="rest-api_12 | #1" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/rest-api_12.http" requestIdentifier="#1" runType="Run single request">
+      <method v="2" />
+    </configuration>
     <configuration name="rest-api_9 | #1" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/rest-api_9.http" requestIdentifier="#1" runType="Run single request">
       <method v="2" />
     </configuration>
@@ -293,10 +279,10 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Gradle.DrugInfoUpdateJobTest.실제_사이트에서_오늘자_엑셀을_다운받아_DB에_적재한다" />
       <item itemvalue="Gradle.portfolio-msa-project [build]" />
       <item itemvalue="Gradle.portfolio-msa-project [clean]" />
       <item itemvalue="Gradle.portfolio-msa-project:ingestion-service [clean]" />
+      <item itemvalue="HTTP Request.rest-api_12 | #1" />
       <item itemvalue="HTTP Request.rest-api_9 | #1" />
       <item itemvalue="Spring Boot.ApiGatewayServiceApplication" />
       <item itemvalue="Spring Boot.CommonModuleApplication" />
@@ -305,11 +291,11 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="HTTP Request.rest-api_12 | #1" />
         <item itemvalue="HTTP Request.rest-api_9 | #1" />
-        <item itemvalue="Gradle.DrugInfoUpdateJobTest.실제_사이트에서_오늘자_엑셀을_다운받아_DB에_적재한다" />
-        <item itemvalue="Gradle.portfolio-msa-project [build]" />
+        <item itemvalue="Gradle.portfolio-msa-project:ingestion-service [clean]" />
         <item itemvalue="Gradle.portfolio-msa-project [clean]" />
-        <item itemvalue="Gradle.DrugInfoUpdateJobTest.실제_사이트에서_오늘자_엑셀을_다운받아_DB에_적재한다" />
+        <item itemvalue="Gradle.portfolio-msa-project [build]" />
       </list>
     </recent_temporary>
   </component>
@@ -363,6 +349,8 @@
       <workItem from="1766512310533" duration="44000" />
       <workItem from="1766513215250" duration="3996000" />
       <workItem from="1766550991804" duration="75000" />
+      <workItem from="1767138752954" duration="307000" />
+      <workItem from="1767142335640" duration="66000" />
     </task>
     <task id="LOCAL-00001" summary="init gradle">
       <option name="closed" value="true" />
@@ -532,7 +520,47 @@
       <option name="project" value="LOCAL" />
       <updated>1766518738393</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="search-service Dockerfile 설정 수정&#10;- openjdk:17-jdk-slim -&gt; amazoncorretto:17 변경">
+      <option name="closed" value="true" />
+      <created>1766716648180</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1766716648180</updated>
+    </task>
+    <task id="LOCAL-00023" summary="내부 주입 오타 수정">
+      <option name="closed" value="true" />
+      <created>1766717783053</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1766717783053</updated>
+    </task>
+    <task id="LOCAL-00024" summary="ingestion git action 스크립트 수정">
+      <option name="closed" value="true" />
+      <created>1766717963326</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1766717963326</updated>
+    </task>
+    <task id="LOCAL-00025" summary="search service 프로젝트 controller 구현&#10;- 테스트를 위한 구축">
+      <option name="closed" value="true" />
+      <created>1766719288401</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1766719288401</updated>
+    </task>
+    <task id="LOCAL-00026" summary="공통 예외 처리 구현">
+      <option name="closed" value="true" />
+      <created>1766720128863</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1766720128863</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -543,7 +571,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="master" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
@@ -570,7 +610,12 @@
     <MESSAGE value="기본 생성자 구현 하도록 코드 수정" />
     <MESSAGE value="search 기능 구현 진행" />
     <MESSAGE value="orm 컬럼 타입 수정" />
-    <option name="LAST_COMMIT_MESSAGE" value="orm 컬럼 타입 수정" />
+    <MESSAGE value="search-service Dockerfile 설정 수정&#10;- openjdk:17-jdk-slim -&gt; amazoncorretto:17 변경" />
+    <MESSAGE value="내부 주입 오타 수정" />
+    <MESSAGE value="ingestion git action 스크립트 수정" />
+    <MESSAGE value="search service 프로젝트 controller 구현&#10;- 테스트를 위한 구축" />
+    <MESSAGE value="공통 예외 처리 구현" />
+    <option name="LAST_COMMIT_MESSAGE" value="공통 예외 처리 구현" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

@@ -38,7 +38,7 @@ class DrugSearchRepository(
                 s.efficacy_url, 
                 s.dosage_url
             FROM drug_master m
-            LEFT JOIN drug_spec s ON m.item_seq = s.master_id
+            LEFT JOIN drug_spec s ON m.master_id = s.master_id
             WHERE $whereClause
             ORDER BY m.permit_date DESC
             LIMIT :limit OFFSET :offset
