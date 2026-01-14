@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5e6bdd9f-c76c-417b-b9bd-d6e15a733b21" name="Changes" comment="데이터 형태 수정">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="5e6bdd9f-c76c-417b-b9bd-d6e15a733b21" name="Changes" comment="README 내용 수정" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -359,6 +357,7 @@
       <workItem from="1767764282596" duration="624000" />
       <workItem from="1767850174415" duration="1267000" />
       <workItem from="1767930399995" duration="1016000" />
+      <workItem from="1768375426028" duration="1163000" />
     </task>
     <task id="LOCAL-00001" summary="init gradle">
       <option name="closed" value="true" />
@@ -584,7 +583,15 @@
       <option name="project" value="LOCAL" />
       <updated>1767320352942</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="README 내용 수정">
+      <option name="closed" value="true" />
+      <created>1768375931788</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1768375931788</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -614,7 +621,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="init gitignore" />
     <MESSAGE value="배치 기능 구현" />
     <MESSAGE value="docker 배포 기능 구현" />
     <MESSAGE value="배치 작업 외부 호출 기능 구현" />
@@ -639,7 +645,8 @@
     <MESSAGE value="공통 예외 처리 구현" />
     <MESSAGE value="검색 SQL 문 수정" />
     <MESSAGE value="데이터 형태 수정" />
-    <option name="LAST_COMMIT_MESSAGE" value="데이터 형태 수정" />
+    <MESSAGE value="README 내용 수정" />
+    <option name="LAST_COMMIT_MESSAGE" value="README 내용 수정" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
