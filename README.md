@@ -10,18 +10,19 @@
 ### B. 🛠️ 기술 스택 (Tech Stack)
 
 + Backend (MSA): Spring Boot, Kotlin, Gradle Multi-Module
-+ Database: MySQL 8.0, Redis
++ Database: PostgreSQL database 17.7
 + Messaging/Protocol: gRPC, HTTP/REST
-+ Frontend: React, TypeScript (선택), Vite
++ Frontend(작업 예정): React, Nginx
++ Infrastructure: AWS Lightsail, Docker 
++ CI/CD: GitHub Actions
 
 ---
 
 ### C. 🗺️ 시스템 아키텍처 및 데이터 흐름
 
 + 서비스 간 통신 전략: Protobuf를 사용하여, 기존 API 통신의 JSON 성능 문제를 해결
-+ 데이터 처리 흐름 (Flow Diagram)
-  > 배치 흐름: **Data Ingestion Service**가 Spring Batch를 사용. 엑셀로된 공공 데이터를 매일 하루 마다 조회 하여, 기존에 저장된 데이터의 버전을 비교 체크 후 Update 처리 
-+ 검색 흐름: 사용자 요청 → API Gateway → gRPC → Search Service → Redis/MySQL 조회 과정을 단계별로 설명.
++ 데이터 처리 흐름
+  > 배치 흐름: **Data Ingestion Service**가 Spring Batch를 사용. 엑셀로된 공공 데이터를 매일 하루 마다 조회 하여, 기존에 저장된 데이터의 버전을 비교 체크 후 Update 처리
 
 ---
 

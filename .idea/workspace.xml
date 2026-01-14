@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5e6bdd9f-c76c-417b-b9bd-d6e15a733b21" name="Changes" comment="공통 예외 처리 구현">
+    <list default="true" id="5e6bdd9f-c76c-417b-b9bd-d6e15a733b21" name="Changes" comment="데이터 형태 수정">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -351,6 +351,14 @@
       <workItem from="1766550991804" duration="75000" />
       <workItem from="1767138752954" duration="307000" />
       <workItem from="1767142335640" duration="66000" />
+      <workItem from="1767318205466" duration="2809000" />
+      <workItem from="1767339018571" duration="85000" />
+      <workItem from="1767580007580" duration="2315000" />
+      <workItem from="1767667425407" duration="13000" />
+      <workItem from="1767679990099" duration="501000" />
+      <workItem from="1767764282596" duration="624000" />
+      <workItem from="1767850174415" duration="1267000" />
+      <workItem from="1767930399995" duration="1016000" />
     </task>
     <task id="LOCAL-00001" summary="init gradle">
       <option name="closed" value="true" />
@@ -560,7 +568,23 @@
       <option name="project" value="LOCAL" />
       <updated>1766720128863</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="검색 SQL 문 수정">
+      <option name="closed" value="true" />
+      <created>1767319168399</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1767319168399</updated>
+    </task>
+    <task id="LOCAL-00028" summary="데이터 형태 수정">
+      <option name="closed" value="true" />
+      <created>1767320352942</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1767320352942</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -590,8 +614,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="init gradle" />
-    <MESSAGE value="init readme write" />
     <MESSAGE value="init gitignore" />
     <MESSAGE value="배치 기능 구현" />
     <MESSAGE value="docker 배포 기능 구현" />
@@ -615,7 +637,9 @@
     <MESSAGE value="ingestion git action 스크립트 수정" />
     <MESSAGE value="search service 프로젝트 controller 구현&#10;- 테스트를 위한 구축" />
     <MESSAGE value="공통 예외 처리 구현" />
-    <option name="LAST_COMMIT_MESSAGE" value="공통 예외 처리 구현" />
+    <MESSAGE value="검색 SQL 문 수정" />
+    <MESSAGE value="데이터 형태 수정" />
+    <option name="LAST_COMMIT_MESSAGE" value="데이터 형태 수정" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
