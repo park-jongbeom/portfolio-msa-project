@@ -1,6 +1,3 @@
-server:
-  port: 3002
-
 grpc:
   server:
     port: 9092

@@ -1,12 +1,12 @@
-server:
-  port: 3003
+spring:
+  data:
+    redis:
+      host: localhost
+      port: 6379
 
 grpc:
   client:
     search-service:
+      # [수정] 환경변수가 없으면 'localhost' 사용
       address: static://localhost:9092
       negotiation-type: plaintext
-
-spring:
-  application:
-    name: api-gateway-service
