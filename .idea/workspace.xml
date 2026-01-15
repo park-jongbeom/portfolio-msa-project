@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5e6bdd9f-c76c-417b-b9bd-d6e15a733b21" name="Changes" comment="README 내용 수정" />
+    <list default="true" id="5e6bdd9f-c76c-417b-b9bd-d6e15a733b21" name="Changes" comment="IP 변경으로 인한 재배포">
+      <change beforePath="$PROJECT_DIR$/.idea/sshConfigs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sshConfigs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/webServers.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/webServers.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -358,6 +362,8 @@
       <workItem from="1767850174415" duration="1267000" />
       <workItem from="1767930399995" duration="1016000" />
       <workItem from="1768375426028" duration="1163000" />
+      <workItem from="1768383635533" duration="4876000" />
+      <workItem from="1768441111646" duration="758000" />
     </task>
     <task id="LOCAL-00001" summary="init gradle">
       <option name="closed" value="true" />
@@ -591,7 +597,15 @@
       <option name="project" value="LOCAL" />
       <updated>1768375931788</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="IP 변경으로 인한 재배포">
+      <option name="closed" value="true" />
+      <created>1768384670994</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1768384670994</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -621,7 +635,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="배치 기능 구현" />
     <MESSAGE value="docker 배포 기능 구현" />
     <MESSAGE value="배치 작업 외부 호출 기능 구현" />
     <MESSAGE value="배치 작업 gitaction 연동 기능 구현" />
@@ -646,7 +659,8 @@
     <MESSAGE value="검색 SQL 문 수정" />
     <MESSAGE value="데이터 형태 수정" />
     <MESSAGE value="README 내용 수정" />
-    <option name="LAST_COMMIT_MESSAGE" value="README 내용 수정" />
+    <MESSAGE value="IP 변경으로 인한 재배포" />
+    <option name="LAST_COMMIT_MESSAGE" value="IP 변경으로 인한 재배포" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
